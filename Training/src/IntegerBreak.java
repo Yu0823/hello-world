@@ -16,3 +16,4 @@ public class IntegerBreak {
         System.out.println(new IntegerBreak().integerBreak(10));
     }
 }
+//This idea is wrong
