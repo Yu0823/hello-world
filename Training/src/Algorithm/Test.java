@@ -1,5 +1,7 @@
 package Algorithm;
 
+import java.util.*;
+
 public class Test extends Thread{
     private static int count = 0;
 //    private static byte[] b = new byte[0];
@@ -11,7 +13,10 @@ public class Test extends Thread{
         }
          main.sleep(1000);
         System.out.println(count);
-
+        HashSet set = new HashSet<Integer>();
+        Queue q = new LinkedList();
+        List now;
+        
     }
 
     @Override
