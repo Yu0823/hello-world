@@ -5,32 +5,35 @@ import java.util.Set;
 
 public class LengthOfLongestSubstring {
     public int lengthOfLongestSubstring(String s) {
-        Set<Character> set = new HashSet<>();
-        char[] a = s.toCharArray();
-        int left = 0, right = 1, max = 0;
-        if(a.length == 0)
+        int left = 0, right = 0;
+        int max = 0;
+        int length = s.length();
+        if(length == 0)
             return 0;
-        set.add(a[0]);
-        int now = 1;
-        while(true){
-            while(right < a.length && !set.contains(a[right])){
-                set.add(a[right]);
-                right++;
-                now++;
+        else if(length == 1)
+            return 1;
+        char[] array = s.toCharArray();
+        HashSet<Character> set = new HashSet<>();
+        //right is the next
+        while(right < length){
+            if(!set.contains(array[right])){
+                set.add(array[right]);
             }
-            max = Math.max(now, max);
-            if(right == a.length)
-                break;
+            //duplicate letter
             else{
-                set.remove(a[left]);
+                while(array[left] != array[right]){
+                    set.remove(array[left]);
+                    left++;
+                }
                 left++;
-                now--;
             }
+            right++;
+            max = Math.max(max, right - left);
         }
         return max;
     }
     public static void main(String[] args) {
-        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring("pwwkew"));
+        System.out.println(new LengthOfLongestSubstring().lengthOfLongestSubstring("bbbbb"));
     }
 }
 

@@ -15,8 +15,9 @@ public class Test extends Thread{
         System.out.println(count);
         HashSet set = new HashSet<Integer>();
         Queue q = new LinkedList();
-        List now;
-        
+        List l = new ArrayList();
+        String s;
+        HashMap m = new HashMap<Integer, Integer>();
     }
 
     @Override
@@ -26,4 +27,6 @@ public class Test extends Thread{
             System.out.println(Thread.currentThread().getName()+": "+count);
         }
     }
+
+
 }
